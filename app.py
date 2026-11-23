@@ -40,6 +40,7 @@ if st.session_state.transaksi:
 
     st.metric("total pemasukan", f"Rp {masuk:,}")
     st.metric("total pengeluaran", f"Rp {keluar:,}")
-    st.metric("saldo akhir," f"Rp {masuk - keluar:,}")
+    saldo = masuk - keluar
+    st.metric("saldo akhir", "Rp " + format(saldo, ","))
 else:
     st.info("belum ada transaksi.")    
